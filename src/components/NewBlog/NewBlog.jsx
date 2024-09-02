@@ -1,34 +1,35 @@
 import React, { useState } from 'react'
+import { db } from '../../Firebase';
+import { addDoc, collection } from 'firebase/firestore';
 
 export default function NewBog() {
+    
     const [userData,setUserData]=useState({
         name:"",
         blog_title:"",
         blog_info:""
     })
+    const val=collection(db,"blogData")
     const submitData = async (e) => {
-        e.preventDefault();    
+        e.preventDefault();
+        if (!userData.name || !userData.blog_title || !userData.blog_info) {
+            alert("All fields are required."); // Set error message
+            return;
+          }
         try {
-            const response = await fetch('https://blogprojectbysatu-default-rtdb.firebaseio.com/BlogRecord.json', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ userData })
+            await addDoc(val,userData)
+            alert("Data added successfully!"); // Set success message
+
+            // Clear the input fields
+            setUserData({
+              name: "",
+              blog_title: "",
+              blog_info: ""
             });
-    
-            if (response.ok) {
-                alert('Success');
-            } else {
-                const errorMessage = await response.text();
-                console.error('Failed with status:', response.status);
-                console.error('Error message:', errorMessage);
-                alert('Failed');
-            }
         } catch (error) {
-            console.error('Error:', error);
-            alert('Failed');
+            
         }
+        
     };
     
     let name,value;
