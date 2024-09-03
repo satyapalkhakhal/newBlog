@@ -23,15 +23,17 @@ function App() {
     <>
       <div className="container">
       <main className="container">
-        <div className="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
-          <div className="col-lg-6 px-0">
-            <h1 className="display-4 fst-italic">{HeroItem.blog_title}</h1>
-            <p className="lead my-3">{HeroItem.blog_info}.</p>
-            <p className="lead mb-0">
-              <a href="#continue" className="text-body-emphasis fw-bold">...{HeroItem.name}</a>
-            </p>
-          </div>
-        </div>
+      {HeroItem && (
+            <div className="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+              <div className="col-lg-6 px-0">
+                <h1 className="display-4 fst-italic">{HeroItem.blog_title}</h1>
+                <p className="lead my-3">{HeroItem.blog_info}.</p>
+                <p className="lead mb-0">
+                  <a href="#continue" className="text-body-emphasis fw-bold">...{HeroItem.name}</a>
+                </p>
+              </div>
+            </div>
+          )}
 
         <div className="row mb-2">
         {record.map((item) => (
