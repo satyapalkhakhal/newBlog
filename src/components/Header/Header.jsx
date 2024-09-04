@@ -7,7 +7,7 @@ export default function Header() {
        <header className="border-bottom lh-1 py-3">
         <div className="row flex-nowrap justify-content-between align-items-center">
           <div className="col-4 pt-1">
-            <Link className="link-secondary" to="#subscribe">
+            <Link className="link-secondary" to="/">
               Subscribe
             </Link>
           </div>
@@ -17,7 +17,7 @@ export default function Header() {
             </Link>
           </div>
           <div className="col-4 d-flex justify-content-end align-items-center">
-            <Link className="link-secondary" to="#search" aria-label="Search">
+            <Link className="link-secondary" to="/" aria-label="Search">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="mx-3" role="img" viewBox="0 0 24 24">
                 <title>Search</title>
                 <circle cx="10.5" cy="10.5" r="7.5"></circle>
@@ -32,10 +32,10 @@ export default function Header() {
       </header>
         <div className="nav-scroller py-1 mb-3 border-bottom">
         <nav className="nav nav-underline justify-content-between">
-          <Link className="nav-item nav-link link-body-emphasis active" to="#world">World</Link>
-          <Link className="nav-item nav-link link-body-emphasis" to="#us">U.S.</Link>
+          <Link className="nav-item nav-link link-body-emphasis active" to="/">World</Link>
+          <Link className="nav-item nav-link link-body-emphasis" to="/">U.S.</Link>
           <Link className="nav-item nav-link link-body-emphasis" to="/new"><strong>Add New Blog</strong></Link>
-          <Link className="nav-item nav-link link-body-emphasis" to="#tech">Technology</Link>
+          <Link className="nav-item nav-link link-body-emphasis" to="/">Technology</Link>
 
         </nav>
       </div>
