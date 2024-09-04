@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <>
       <header className="border-bottom lh-1 py-3">
-        <div className="container">
+        <div className="container-fluid px-3">
           <div className="row flex-nowrap justify-content-between align-items-center">
             <div className="col-4 pt-1">
               <Link className="link-secondary" to="/">
@@ -13,7 +13,7 @@ export default function Header() {
               </Link>
             </div>
             <div className="col-4 text-center">
-              <Link className="blog-header-logo text-body-emphasis text-decoration-none" to="/">
+              <Link className="blog-header-logo text-body-emphasis text-decoration-none" to="#home">
                 Blog
               </Link>
             </div>
@@ -37,7 +37,7 @@ export default function Header() {
                   <path d="M21 21l-5.2-5.2"></path>
                 </svg>
               </Link>
-              <Link className="btn btn-sm btn-outline-secondary" to="/">
+              <Link className="btn btn-sm btn-outline-secondary" to="#signup">
                 Sign up
               </Link>
             </div>
@@ -45,7 +45,7 @@ export default function Header() {
         </div>
       </header>
       <div className="nav-scroller py-1 mb-3 border-bottom">
-        <div className="container">
+        <div className="container-fluid px-3">
           <nav className="nav nav-underline justify-content-between">
             <NavLink className="nav-item nav-link link-body-emphasis" to="/">
               World

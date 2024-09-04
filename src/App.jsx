@@ -3,6 +3,7 @@ import { db } from './Firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import Card from './components/Card/Card';
 import Hero from './components/Hero/Hero';
+import { Link } from 'react-router-dom';
 
 function App() {
   const [record, setRecord] = useState([]);
@@ -12,6 +13,7 @@ function App() {
     const getData = async () => {
       const dbVal = await getDocs(value);
       setRecord(dbVal.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      console.log(dbVal.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
     };
     getData();
   }, []);
@@ -29,7 +31,7 @@ function App() {
                 <h1 className="display-4 fst-italic">{HeroItem.blog_title}</h1>
                 <p className="lead my-3">{HeroItem.blog_info}.</p>
                 <p className="lead mb-0">
-                  <a href="#continue" className="text-body-emphasis fw-bold">...{HeroItem.name}</a>
+                  <Link to={`id/${HeroItem.id}`} className="text-body-emphasis fw-bold">...{HeroItem.name}</Link>
                 </p>
               </div>
             </div>
@@ -44,12 +46,12 @@ function App() {
                 <h3 className="mb-0">{item.name}</h3>
                 <div className="mb-1 text-body-secondary">{item.blog_title}</div>
                 <p className="card-text mb-auto">{item.blog_info}.</p>
-                <a href="#continue" className="icon-link gap-1 icon-link-hover stretched-link">
+                <Link to={`id/${item.id}`} className="icon-link gap-1 icon-link-hover stretched-link">
                   Continue reading
                   <svg className="bi">
                     <use xlinkHref="#chevron-right"></use>
                   </svg>
-                </a>
+                </Link>
               </div>
               <div className="col-auto d-none d-lg-block">
                 <svg className="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
