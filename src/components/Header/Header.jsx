@@ -46,18 +46,12 @@ export default function Header() {
       </header>
       <div className="nav-scroller py-1 mb-3 border-bottom">
         <div className="container-fluid px-3">
-          <nav className="nav nav-underline justify-content-between">
-            <NavLink className="nav-item nav-link link-body-emphasis" to="/">
+          <nav className="nav nav-underline justify-content-center">
+            <NavLink className="nav-item nav-link link-body-emphasis mr-2" to="/">
               World
             </NavLink>
-            <NavLink className="nav-item nav-link link-body-emphasis" to="/">
-              U.S.
-            </NavLink>
-            <NavLink className="nav-item nav-link link-body-emphasis" to="/new">
+            <NavLink className="nav-item nav-link link-body-emphasis ml-2" to="/new">
               <strong>Add New Blog</strong>
-            </NavLink>
-            <NavLink className="nav-item nav-link link-body-emphasis" to="/">
-              Technology
             </NavLink>
           </nav>
         </div>

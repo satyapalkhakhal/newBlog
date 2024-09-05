@@ -14,7 +14,7 @@ function BlogData() {
         getData();
       }, []);
   return (
-        <div className="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+        <div className="p-4 p-md-5 mb-4 rounded text-body-emphasis" style={{ backgroundColor: '#CBC3E3	' }}>
           <div className="col-lg-6 px-0">
             <h1 className="display-4 fst-italic">{record.blog_title}</h1>
             <p className="lead my-3">{record.blog_info}</p>
